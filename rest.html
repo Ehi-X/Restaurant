@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                textcolor: '#101A24',
+                buttonbg: '#EA6D27',
+              }
+            }
+          }
+        }
+      </script>
+</head>
+
+<body class="bg-gray-100 w-full">
+
+    <!-- Navbar Section -->
+    <nav class="w-full bg-white shadow-md">
+        <div class="container mx-auto px-4 flex items-center justify-between h-20">
+            <!-- Logo -->
+            <div class="h-14 w-48">
+                <img src="rest.1.png" alt="Logo" class="h-10 w-auto md:h-14">
+            </div>
+
+            <!-- Menu Links -->
+            <div class="hidden md:flex space-x-6">
+                <a href="#" class="text-textcolor text-sm md:text-base hover:underline">Menu</a>
+                <a href="#" class="text-textcolor text-sm md:text-base hover:underline">Events</a>
+                <a href="#" class="text-textcolor text-sm md:text-base hover:underline">Gallery</a>
+                <a href="#" class="text-textcolor text-sm md:text-base hover:underline">About</a>
+                <a href="#" class="text-textcolor text-sm md:text-base hover:underline">Contact</a>
+            </div>
+
+            <!-- Button -->
+            <div class="hidden md:block">
+                <button class="h-10 w-40 bg-buttonbg text-white shadow-lg rounded-tl-3xl rounded-br-lg rounded-tr-sm rounded-bl-sm text-sm md:text-base">
+                    Book a Table
+                </button>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="block md:hidden">
+                <button id="menu-toggle" class="text-textcolor focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-4 py-2">
+            <a href="#" class="block text-textcolor text-base py-1 hover:underline">Menu</a>
+            <a href="#" class="block text-textcolor text-base py-1 hover:underline">Events</a>
+            <a href="#" class="block text-textcolor text-base py-1 hover:underline">Gallery</a>
+            <a href="#" class="block text-textcolor text-base py-1 hover:underline">About</a>
+            <a href="#" class="block text-textcolor text-base py-1 hover:underline">Contact</a>
+            <button class="mt-4 h-10 w-full bg-buttonbg text-white shadow-lg rounded-tl-3xl rounded-br-lg rounded-tr-sm rounded-bl-sm text-base">
+                Book a Table
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Section -->
+    <main class="grid grid-cols-1 lg:grid-cols-2 px-4 lg:px-16 bg-slate-200">
+        <div class="flex justify-center items-center flex-col py-10 lg:py-0">
+            <h1 class="text-center text-[28px] lg:text-[40px] font-bold mb-4 lg:mb-6">We provide the best food for you</h1>
+            <p class="text-center lg:text-left w-full lg:w-[376px] mb-6 text-base">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quo consectetur atque quibusdam harum deleniti ut excepturi dolorem doloremque maiores.
+            </p>
+            <div class="flex space-x-4 mb-6">
+                <button class="h-10 w-40 bg-black text-white shadow-lg rounded-tl-3xl rounded-br-lg rounded-tr-sm rounded-bl-sm text-sm lg:text-base">
+                    Menu
+                </button>
+                <button class="h-10 w-40 bg-buttonbg text-white shadow-lg rounded-tl-3xl rounded-br-lg rounded-tr-sm rounded-bl-sm text-sm lg:text-base">
+                    Book a Table
+                </button>
+            </div>
+            <div class="flex space-x-6 text-2xl">
+                <i class="fa-brands fa-facebook p-3 rounded-full border-2 border-black hover:bg-black hover:text-white"></i>
+                <i class="fa-brands fa-square-instagram p-3 rounded-full border-2 border-black hover:bg-black hover:text-white"></i>
+                <i class="fa-brands fa-twitter p-3 rounded-full border-2 border-black hover:bg-black hover:text-white"></i>
+            </div>
+        </div>
+
+        <div class="flex justify-center items-center">
+            <img src="Mask group.png" alt="Food" class="h-[300px] lg:h-[420px] w-auto">
+        </div>
+    </main>
+
+    <script>
+        // Toggle Mobile Menu Visibility
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
